@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class Calculation {
-    public static void action() throws Exception {
+
+     public static void action() throws Exception {
         Converter converter = new Converter();
         String[] actions = {"+", "-", "/", "*"};
         String[] regexActions = {"\\+", "-", "/", "\\*"};
