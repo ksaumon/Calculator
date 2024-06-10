@@ -3,7 +3,6 @@ import java.util.TreeMap;
 public class Converter {
     TreeMap<Character,Integer>  romanKeyMap  = new TreeMap<>();
     TreeMap<Integer, String>  arabianKeyMap = new TreeMap<>();
-
     public Converter() {
         romanKeyMap.put('I', 1);
         romanKeyMap.put('V', 5);
@@ -26,31 +25,24 @@ public class Converter {
         arabianKeyMap.put(5, "V");
         arabianKeyMap.put(4, "IV");
         arabianKeyMap.put(1, "I");
-
     }
-    public boolean isRoman(String number){
+    public boolean isRoman(String number) {
         return   romanKeyMap.containsKey(number.charAt(0));
     }
-
-
     public String intToRoman(int number) {
         String roman = "";
         int arabianKey;
-            if (number==-1){
-                System.out.println("");
-        }else if (number<1){
+        if(number==-1){
+            System.out.println("");
+        }else if(number<1) {
                 System.out.println(" в римской системе нет отрицательных чисел");
-            }
-
+        }
         do {
             arabianKey = arabianKeyMap.floorKey(number);
             roman += arabianKeyMap.get(arabianKey);
             number -= arabianKey;
-        } while (number != 0);
-
-
+        } while(number != 0);
         return roman;
-
     }
     public int romanToInt(String s) {
         int end = s.length() - 1;
