@@ -2,7 +2,7 @@ import java.util.TreeMap;
 
 public class Converter {
 
-    TreeMap<Character,Integer>  romanKeyMap  = new TreeMap<>();
+    TreeMap<Character, Integer>  romanKeyMap  = new TreeMap<>();
     TreeMap<Integer, String>  arabianKeyMap = new TreeMap<>();
     public Converter() {
         romanKeyMap.put('I', 1);
@@ -10,13 +10,7 @@ public class Converter {
         romanKeyMap.put('X', 10);
         romanKeyMap.put('L', 50);
         romanKeyMap.put('C', 100);
-        romanKeyMap.put('D', 500);
-        romanKeyMap.put('M', 1000);
 
-        arabianKeyMap.put(1000, "M");
-        arabianKeyMap.put(900, "CM");
-        arabianKeyMap.put(500, "D");
-        arabianKeyMap.put(400, "CD");
         arabianKeyMap.put(100, "C");
         arabianKeyMap.put(90, "XC");
         arabianKeyMap.put(50, "L");
@@ -33,9 +27,9 @@ public class Converter {
     public String intToRoman(int number) {
         String roman = "";
         int arabianKey;
-        if(number==-1){
+        if(number == -1) {
             System.out.println("");
-        }else if(number<1) {
+        } else if(number < 1) {
                 System.out.println(" в римской системе нет отрицательных чисел");
         }
         do {
@@ -52,11 +46,12 @@ public class Converter {
         int result = romanKeyMap.get(arr[end]);
         for (int i = end - 1; i >= 0; i--) {
             arabian = romanKeyMap.get(arr[i]);
-            if (arabian < romanKeyMap.get(arr[i - 1])) {
+            if (arabian < romanKeyMap.get(arr[i + 1])) {
                 result -= arabian;
             } else {
                 result += arabian;
             }
-        }   return result;
+        }
+        return result;
     }
 }
