@@ -1,10 +1,12 @@
+package org.semen;
+
 import java.util.TreeMap;
 
-public class Converter {
+class Converter {
 
     TreeMap<Character, Integer>  romanKeyMap  = new TreeMap<>();
     TreeMap<Integer, String>  arabianKeyMap = new TreeMap<>();
-    public Converter() {
+    Converter() {
         romanKeyMap.put('I', 1);
         romanKeyMap.put('V', 5);
         romanKeyMap.put('X', 10);
@@ -21,10 +23,10 @@ public class Converter {
         arabianKeyMap.put(4, "IV");
         arabianKeyMap.put(1, "I");
     }
-    public boolean isRoman(String number) {
+    boolean isRoman(String number) {
         return   romanKeyMap.containsKey(number.charAt(0));
     }
-    public String intToRoman(int number) {
+    String intToRoman(int number) {
         String roman = "";
         int arabianKey;
         if(number == -1) {
@@ -39,7 +41,7 @@ public class Converter {
         } while(number != 0);
         return roman;
     }
-    public int romanToInt(String s) {
+    int romanToInt(String s) {
         int end = s.length() - 1;
         char[] arr = s.toCharArray();
         int arabian;
