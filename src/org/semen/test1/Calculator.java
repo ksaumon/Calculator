@@ -1,8 +1,6 @@
-package org.semen;
+package org.semen.test1;
 
 import java.util.Scanner;
-
-import static org.semen.Main.calc;
 
 class Calculator {
 
@@ -10,7 +8,7 @@ class Calculator {
         Scanner scn = new Scanner(System.in);
         String input = scn.nextLine();
         try {
-            System.out.println(calc(input));
+            System.out.println(Main.calc(input));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
