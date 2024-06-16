@@ -1,4 +1,4 @@
-package org.semen;
+package org.semen.test1;
 
 class Main {
 
@@ -56,5 +56,6 @@ class Main {
         } else {
             throw new Exception("используются одновременно разные системы счисления");
         }
+
     }
 }

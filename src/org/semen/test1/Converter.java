@@ -1,4 +1,4 @@
-package org.semen;
+package org.semen.test1;
 
 import java.util.TreeMap;
 
@@ -55,5 +55,6 @@ class Converter {
             }
         }
         return result;
+
     }
 }
